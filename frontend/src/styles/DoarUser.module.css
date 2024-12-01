@@ -1,0 +1,119 @@
+/* src/styles/DoarUser.module.css */
+
+.container {
+  padding: 20px;
+  position: relative;
+}
+
+.content {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.mapContainer {
+  width: 700px;
+  height: 500px;
+  margin: 0 auto;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.marker {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.marker:hover {
+  transform: scale(1.2);
+}
+
+.selected {
+  animation: ripple 1.5s infinite;
+}
+
+@keyframes ripple {
+  0% {
+    stroke: #0000FF;
+    stroke-width: 1;
+    fill: #0000FF;
+    opacity: 1;
+  }
+  50% {
+    stroke: #0000FF;
+    stroke-width: 3;
+    fill: #0000FF;
+    opacity: 0.5;
+  }
+  100% {
+    stroke: #0000FF;
+    stroke-width: 1;
+    fill: #0000FF;
+    opacity: 1;
+  }
+}
+
+/* Estilos para o tooltip personalizado */
+.customTooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  padding: 12px 15px;
+  border-radius: 5px;
+  font-size: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 200px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  word-wrap: break-word;
+  z-index: 10;
+}
+
+.customTooltipVisible {
+  opacity: 1;
+}
+
+/* Estilo do conteúdo do tooltip */
+.tooltipTitle {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #f9a826;
+}
+
+.tooltipText {
+  margin: 4px 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.tooltipStrong {
+  color: #f9a826;
+}
+
+.tooltipLink {
+  color: #f9a826;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.tooltipLink:hover {
+  text-decoration: underline;
+}
+
+.markerText {
+  font-size: 6px;
+  font-weight: bold;
+  fill: #000;
+  pointer-events: none;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+}

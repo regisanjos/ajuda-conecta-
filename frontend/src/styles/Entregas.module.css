@@ -1,0 +1,477 @@
+/* src/styles/Entregas.module.css */
+
+/* Aplicar box-sizing globalmente */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.entregasContainer {
+    margin: 20px;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+
+.entregasTopBoardContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -20px;
+}
+
+.entregasNavList {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin-top: -5%; 
+}
+
+.entregasNavListItem {
+    margin-right: 5px;
+    font-size: 14px;
+    color: #686868;
+}
+
+.entregasNavListItem::after {
+    content: '/';
+    margin-left: 5px;
+}
+
+.entregasNavListItem:last-child::after {
+    content: '';
+}
+
+.entregasHeaderTitle {
+    position: absolute;
+    margin-top: 5%;
+}
+
+.searchAndAddContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.entregasSearchInput {
+    position: absolute;
+    width: 300px;
+    height: 36px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    margin-right: 10px;
+    margin-left: 61%;
+    margin-top: 0px;
+}
+
+.entregasSearchInput:focus {
+    border-color: #84DA15;
+}
+
+.entregasAddButton {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #84DA15;
+    background-color: #84DA15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    top: 120px;
+    left: 87%;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.entregasAddButton:hover {
+    background-color: #72c30b;
+    border-color: #72c30b;
+}
+
+.entregasListContainer {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    width: 95%;
+    max-width: 1200px;
+    margin-left: 0%;
+    margin-top: 5%;
+}
+
+.entregasListTitle {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.entregasDataHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #686868;
+    border-bottom: 2px solid #84DA15;
+    padding: 12px 0;
+    font-weight: 700;
+    background-color: #f1f1f1;
+}
+
+.entregasDataRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+    transition: background-color 0.3s;
+}
+
+.entregasDataRow:hover {
+    background-color: #f9f9f9;
+}
+
+.entregasDataColumn {
+    flex: 1;
+    text-align: center;
+    padding: 0 10px;
+    word-wrap: break-word;
+}
+
+.entregasDataColumn:first-child {
+    text-align: left;
+    font-weight: 600;
+    flex: 2;
+}
+
+/* Botões de Ação */
+.entregasActionButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.editButton,
+.deleteButton,
+.copyButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100px;
+    padding: 8px 0;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.editButton {
+    background-color: #4caf50;
+}
+
+.editButton:hover {
+    background-color: #45a049;
+}
+
+.deleteButton {
+    background-color: #f44336;
+}
+
+.deleteButton:hover {
+    background-color: #d32f2f;
+}
+
+.copyButton {
+    background-color: #2196F3;
+}
+
+.copyButton:hover {
+    background-color: #1976D2;
+}
+
+/* Modal */
+.entregasModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.entregasModalContent {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.entregasModalContent h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #333;
+    text-align: center;
+}
+
+.entregasFormGroup {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.entregasFormGroup label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.entregasFormGroup input,
+.entregasFormGroup select {
+    width: 100%;
+    padding: 10px;
+    padding-top: 0.6cap;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+    height: 36px;
+}
+
+.entregasFormGroup input:focus,
+.entregasFormGroup select:focus {
+    border-color: #84DA15;
+}
+
+/* Estilo inline para CPF e Data */
+.entregasInlineGroup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.entregasFormGroupInline {
+    flex: 1 1 45%;
+    margin-right: 10px;
+    margin-left: 1px;
+
+}
+
+.cpf12, .date12{
+    height: 36px;
+    margin-bottom: 10px;
+}
+
+.entregasFormGroupInline:last-child {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.entregasFormGroupInline label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.entregasFormGroupInline input,
+.entregasFormGroupInline select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.entregasFormGroupInline input:focus,
+.entregasFormGroupInline select:focus {
+    border-color: #84DA15;
+    box-shadow: 0 0 5px rgba(132, 218, 21, 0.5);
+}
+
+/* Estilização aprimorada para o campo "Status" */
+.entregasStatusSelect {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #84DA15;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #f9fff9;
+    color: #333;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23868686" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 011 0L8 10.293l5.354-5.647a.5.5 0 11.708.708l-6 6.333a.5.5 0 01-.708 0l-6-6.333a.5.5 0 010-.708z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+.entregasStatusSelect:focus {
+    border-color: #72c30b;
+    box-shadow: 0 0 5px rgba(116, 204, 68, 0.5);
+}
+
+/* Modal Buttons */
+.entregasModalButtons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.entregasSaveButton,
+.entregasCancelButton {
+    color: #fff;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.entregasSaveButton {
+    background-color: #84DA15;
+    color: #fff;
+}
+
+.entregasSaveButton:hover {
+    background-color: #72c30b;
+}
+
+.entregasCancelButton {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.entregasCancelButton:hover {
+    background-color: #d32f2f;
+}
+
+/* Mensagens */
+.successMessage {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.errorMessage {
+    background-color: #f44336;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .entregasTopBoardContainer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .entregasNavList {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    .searchAndAddContainer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .entregasSearchInput {
+        width: 100%;
+    }
+
+    .entregasAddButton {
+        align-self: flex-end;
+    }
+
+    .entregasInlineGroup {
+        flex-direction: column;
+    }
+
+    .entregasFormGroupInline {
+        flex: 1 1 100%;
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 15px; /* Espaçamento entre os campos na vertical */
+    }
+
+    .entregasFormGroupInline:last-child {
+        margin-bottom: 0;
+    }
+
+    .entregasDataHeader,
+    .entregasDataRow {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .entregasDataColumn {
+        text-align: left;
+        padding: 5px 0;
+    }
+
+    .entregasDataColumn:first-child {
+        font-weight: 600;
+    }
+
+    .entregasActionButtons {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 5px;
+    }
+
+    .editButton,
+    .deleteButton,
+    .copyButton {
+        width: auto;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}

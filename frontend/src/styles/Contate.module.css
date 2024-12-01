@@ -1,0 +1,184 @@
+/* src/styles/Contate.module.css */
+
+body {
+    background-color: #f1f1f1;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: #D3D3D3;
+    margin-top: 10px;
+}
+
+.mainContent {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    gap: 20px;
+}
+
+.contactLeft {
+    width: 50%;
+    padding-right: 20px;
+}
+
+.titleH1Contate {
+    margin-top: 10%;
+    font-size: 28px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 40px;
+    margin-left: 10.5%;
+}
+
+.description {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    margin-left: 11%;
+}
+
+.contactDetails {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.containerMessage {
+    background-color: #84DA15;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-left: 11%;
+}
+
+.emailIcon {
+    width: 30px;
+    height: 30px;
+}
+
+.contactLabel {
+    font-size: 16px;
+    font-weight: 500;
+    color: #84DA15;
+    margin-top: 13%;
+    margin-left: -9.5%;
+    font-size: 20px;
+}
+
+.contactEmail {
+    font-size: 14px;
+    color: #666;
+    margin-top: 20%;
+    margin-left: -14%;
+}
+
+.containerForm {
+    position: absolute;
+    width: 30%;
+    background-color: #FFFFFF;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 60%;
+    margin-top: 2%;
+}
+
+.formTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.formInputContact{
+    display: block;
+    background-color: transparent;
+    border: 1px solid #686868;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 4%;
+    margin-top: 4%;
+    font-size: 14px;
+}
+.formLabelContact1{
+    position: absolute;
+    margin-top: -18%;
+    margin-left: 42%;
+}
+.formInputContact1{
+    position: absolute;
+    display: block;
+    background-color: transparent;
+    border: 1px solid #686868;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-top: -8%;
+    margin-left: 43%;
+    width: 180px;
+}
+.formInputContact2{
+    display: block;
+    background-color: transparent;
+    border: 1px solid #686868;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 4%;
+    margin-top: 4%;
+    font-size: 14px;
+    width: 380px;
+}
+.formInputContact3{
+    display: block;
+    background-color: transparent;
+    border: 1px solid #686868;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 4%;
+    margin-top: 4%;
+    width: 380px;
+    font-size: 14px;
+}
+.submitButton {
+    width: 100%;
+    padding: 15px;
+    background-color: #84DA15;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submitButton:hover {
+    background-color: #6AAD11;
+    transform: translateY(-2px);
+}
+
+.submitButton:active {
+    transform: translateY(0);
+}

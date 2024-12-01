@@ -1,0 +1,381 @@
+/* src/styles/ComoDoar.module.css */
+
+
+@keyframes easeInAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(0px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pular {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px); 
+    }
+  }
+
+.comoDoarContainer {
+    height: 100vh;
+    scroll-behavior: smooth;
+}
+.comoDoarImg{
+    width: 300vh;
+    height: 100vh;
+    object-fit: cover; 
+    z-index: -1; 
+    opacity: 0.3;
+    margin-top: -6.5%;
+
+}
+.comoDoarImgContainer{
+    width: 300vh;
+    height: 100.2vh;
+    object-fit: cover; 
+    z-index: -2; 
+    margin-top: -47.2%;
+    background-color: #675757;
+}
+.section {
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+.comoDoarImgInfo{
+    color: #fff;
+    position: absolute;
+    margin-top: -35%;
+    margin-left: 42%;
+    font-size: 100px;
+    animation: easeInAnimation 1s ease-in;
+}
+.comoDoarImgInfoP{
+    color: #fff;
+    position: absolute;
+    margin-top: -25%;
+    margin-left: 31%;
+    font-size: 40px;
+    justify-content: center;
+    text-align: center;
+    animation: easeInAnimation 1s ease-in;
+}
+.comoDoarButton{
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background: #84DA15;
+    font-size: 18px;
+    position: absolute;
+    margin-top: -15%;
+    margin-left: 35%;
+    font-weight: 500;
+    transition: background-color 0.10s, transform 0.5s;
+    color: #fff;
+    animation: easeInAnimation 1s ease-in;
+}
+.acompanharButton{
+    position: absolute;
+    margin-top: -15%;
+    margin-left: 55%;
+    border-radius: 10px;
+    background: #84DA15;
+    font-size: 18px;
+    width: 150px;
+    height: 50px;
+    font-weight: 500;
+    transition: background-color 0.10s, transform 0.5s;
+    color: #fff;
+    animation: easeInAnimation 1s ease-in;
+}
+.buttonNav{
+    position: absolute;
+    margin-left: 48%;
+    margin-top: -8%;
+    border-radius: 50%;
+    
+    font-size: 80px;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    color: #84DA15;
+    box-shadow: none;
+    animation: pular 6s infinite; /* Animação contínua */
+    transform: rotate(90deg);
+}
+.h1HowDonate {
+    color: #000;
+    font-family: "SUSE";
+    font-size: 55px;
+    font-weight: 700;
+    letter-spacing:0;
+    margin-left: 2%;
+    margin-bottom: 12%;
+}
+
+.section h2 {
+    font-size: 35px;
+    color: #000;
+    font-weight: bold;
+    margin-top: 2.5%;
+}
+.text{
+    font-size: 14px;
+}
+.row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    gap: 80px;
+    margin-top: -10%;
+}
+
+.row div {
+    width: 60%;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.title {
+    color: #84DA15;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+    width: 320px;
+}
+.greyContainer{
+    width: 130vh;
+    height: 450px;
+    background: linear-gradient(to bottom right, #575757, #4c4d4c, #252525);
+    z-index: 2;
+    text-align: center;
+    align-items: center;
+    z-index: 0;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+.h1GreyTitle{
+    padding-top: 1.5cap;
+    color: #fff;
+    
+}
+.imgsContainers{
+    display: flex;
+    margin-left: 3%;
+}
+.triagem{
+    margin-left: 8%;
+    margin-top: 12%;
+    width: 70px;
+    height: 70px;
+    z-index: 2;
+}
+.pGreyTitle{
+    padding-top: 5cap;
+    width: 700px;
+    padding-left: 9cap;
+    color: #fff;
+    font-size: 14px;
+}
+.dotLine1{
+    position: absolute;
+    width: 50px;
+    background-color: transparent;
+    border-bottom: 8px dotted #9d9e9a;
+    margin: 20px 0; /* Espaço ao redor da linha */
+    font-size: 30px;
+    margin-top: 10%;
+    margin-left: 10.7%;
+    z-index: 1;
+}
+.dotLine2{
+    position: absolute;
+    width: 50px;
+    background-color: transparent;
+    border-bottom: 8px dotted #9d9e9a;
+    margin: 20px 0; /* Espaço ao redor da linha */
+    font-size: 30px;
+    margin-top: 10%;
+    margin-left: 20.5%;
+    z-index: 1;
+}
+.dotLine3{
+    position: absolute;
+    width: 50px;
+    background-color: transparent;
+    border-bottom: 8px dotted #9d9e9a;
+    margin: 20px 0; /* Espaço ao redor da linha */
+    font-size: 30px;
+    margin-top: 10%;
+    margin-left: 30%;
+    z-index: 1;
+}
+.dotLine4{
+    position: absolute;
+    width: 50px;
+    background-color: transparent;
+    border-bottom: 8px dotted #9d9e9a;
+    margin: 20px 0; /* Espaço ao redor da linha */
+    font-size: 30px;
+    margin-top: 10%;
+    margin-left: 40.5%;
+    z-index: 1;
+}
+.greenContainer{
+    position: absolute;
+    width: 124vh;
+    height: 50vh;
+    background: linear-gradient(to bottom right, #2a4b00 #66A910, #3B6109);
+    margin-top: -28.5%;
+    margin-left: 50%;
+    z-index: -1;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+.imgGreenContainer{
+    position: absolute;
+    width: 124vh;
+    height: 50vh;
+    background-color: #84DA15;
+    margin-top: -28.5%;
+    margin-left: 50%;
+    z-index: -1;
+    opacity: 0.60;
+}
+.cardRow {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    gap: 20px;
+}
+
+.card {
+    background-color: transparent;
+    width: 20%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    height: 280px;
+    margin-left: 5%;
+}
+
+.titleCard{
+    margin-top: 7%;
+    font-size: 20px;
+    font-weight: 500;
+    color: #84DA15;
+}
+.textCard{
+    font-size: 14px;
+}
+.donateButton {
+    background: linear-gradient(to bottom right, #8fe222, #66A910, #8fe222);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px;
+    width: 200px;
+    height: 45px;
+    margin-top: 2%;
+    margin-bottom: 4%;
+}
+h4{
+    font-size: 30px;
+}
+.sectionFinal{
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    background-color: transparent;
+    color: #fff;
+    height: 300px;
+}
+.colorFinal{
+    position: absolute;
+    width: 100%;
+    height: 330px;
+    margin-top: -2.8%;
+    z-index: -2;
+    background-color: #373737;
+}
+.imgFinal{
+    position: absolute;
+    width: 100%;
+    height: 330px;
+    margin-top: -2.8%;
+    opacity: 0.43;
+    z-index: -1;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 18.5%;
+    margin-top: -5%;
+    z-index: 1;
+}
+.lastCard{
+    
+    color: #fff;
+    z-index: 1;
+}
+.stats div {
+    text-align: center;
+}
+
+.stats h3 {
+    font-size: 32px;
+    margin: 0;
+    color: #333;
+    margin-left: -40%;
+}
+
+.stats p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    margin-left: -30%;
+}
+.footer{
+    height: 30px;
+}
+
+/* ANIMAÇÕES */
+
+.comoDoarButton:hover , .acompanharButton:hover{
+    background: linear-gradient(to bottom right, #84DA15, #58910e); 
+    transform: translateY(-12px);
+}
+
+.comoDoarButton:active , .acompanharButton:active {
+    transform: translateY(0);
+}

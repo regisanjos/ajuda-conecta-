@@ -1,0 +1,185 @@
+/* src/styles/Home.module.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+@keyframes easeInAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(0px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+body {
+    
+    background-color: #675757;
+    position: relative;
+    overflow-x: hidden; 
+}
+
+
+
+.headerLogo {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(to bottom right, #84DA15, #58910e); 
+    border-radius: 50%;
+    margin: 30px;
+    z-index: 1;
+    animation: easeInAnimation 1s ease-in;
+}
+
+.imgLogo {
+    width: 85px;
+    height: 85px;
+    margin-left: 1.25%;
+    position: absolute; 
+    object-fit: cover; 
+    z-index: 2; 
+    opacity: 2;
+    margin-left: 1.5%;
+    margin-top: 1.5%;
+    animation: easeInAnimation 2s ease-in;
+}
+
+li a {
+    position: absolute;
+    color: #FFFFFF;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 14px;
+    z-index: 1;
+    animation: easeInAnimation 0.5s ease-in;
+}
+
+li {
+    list-style-type: none;
+    text-decoration: none;
+    display: inline-flex;
+    padding: 40px;
+    margin-left: 40px;
+    text-align: left;
+    animation: easeInAnimation 2s ease-in;
+}
+
+li:first-child {
+    margin-left:14%;
+    margin-right: 5%;
+    
+}
+li:last-child{
+    margin-left: 8%;
+}
+button {
+    border: none;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+
+.line {
+    position: absolute;
+    width: 1200px;
+    height: 1px;
+    background-color: #FFFFFF;
+    border-top: 2px solid rgb(255, 255, 255);
+    margin-left: 10%;
+    margin-top: -0.5%;
+    z-index: 1;
+    animation: easeInAnimation 2s ease-in;
+}
+.imgHome{
+    width: 100%;
+    height: 100%;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    object-fit: cover; 
+    z-index: -1; 
+}
+.colorBody{
+    background-color: #675757;
+    width: 100%;
+    height: 100%;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    object-fit: cover; 
+    z-index: -1; 
+    opacity: 0.43;
+}
+.h1Home, .p1, .donationButton, .subtitle {
+    margin-left: 7%;
+    animation: easeInAnimation 2s ease-in;
+}
+
+.h1Home { 
+    letter-spacing: 8px;
+    font-size: 70px;
+    color: #FFFFFF;
+    font-family: "SUSE";
+    font-weight: 600;
+    margin-top: 10%;
+}
+
+.subtitle {
+    font-family: "SUSE";
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.p1 {
+    width: 500px;
+    font-size: 16px;
+    margin-top: 5%;
+    color: #FFFFFF;
+    font-weight: 300;
+    animation: easeInAnimation 2s ease-in;
+}
+
+.donationButton {
+    width: 260px;
+    height: 65px;
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 50px;
+    color: rgb(255, 255, 255);
+    margin-top: 2%;
+    background: linear-gradient(to bottom right, #84DA15, #58910e); 
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.10s, transform 0.30s;
+}
+
+.headerLogo, button {
+    cursor: pointer;
+}
+
+/* ANIMATIONS */
+
+.donationButton:hover {
+    background-color: #6aad11;
+    font-weight: 500;
+    color: #f7f5f5;
+}
+a:hover {
+    color: #84DA15;
+    font-weight: 600;
+}
+.donationButton:hover{
+    background: linear-gradient(to bottom right, #84DA15, #58910e); 
+    transform: translateY(-5px);
+}
+
+.donationButton:active{
+    transform: translateY(0);
+}

@@ -1,0 +1,169 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+  PONTO_DE_COLETA
+}
+
+enum DonationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum ExitStatus {
+  PENDING
+  COMPLETED
+  CANCELLED
+}
+
+enum DisasterStatus {
+  ACTIVE
+  INACTIVE
+  ENDED
+}
+
+model User {
+  id              Int              @id @default(autoincrement())
+  name            String
+  email           String           @unique
+  password        String
+  role            Role             @default(USER)
+  street          String?
+  city            String?
+  state           String?
+  zipCode         String?
+  country         String?
+  bankName        String?
+  accountNumber   String?
+  routingNumber   String?
+  pixKey          String?
+  paypalEmail     String?
+  donations       Donation[]
+  notifications   Notification[]
+  collectionPoint CollectionPoint? @relation("AdminPoint")
+  collectionPointId Int?
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+}
+
+model Disaster {
+  id          Int            @id @default(autoincrement())
+  name        String
+  location    String
+  startDate   DateTime
+  endDate     DateTime?
+  status      DisasterStatus @default(ACTIVE)
+  description String?
+  imageUrl    String?
+  donation    Donation[]
+}
+
+model CollectionPoint {
+  id        Int        @id @default(autoincrement())
+  name      String
+  address   String
+  city      String
+  neighborhood String
+  adminId   Int        @unique
+  admin     User       @relation("AdminPoint", fields: [adminId], references: [id])
+  donations Donation[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@unique([city, neighborhood], name: "unique_city_neighborhood")
+}
+
+model Item {
+  id            Int            @id @default(autoincrement())
+  name          String
+  category      String
+  quantity      Int
+  donationItems DonationItem[]
+}
+model Donation {
+  id                Int              @id @default(autoincrement())
+  type              String
+  description       String
+  status            DonationStatus   @default(PENDING)
+  recurring         Boolean
+  frequency         String?
+  nextDonationDate  DateTime?
+  userId            Int
+  user              User             @relation(fields: [userId], references: [id])
+  disasterId        Int
+  disaster          Disaster         @relation(fields: [disasterId], references: [id])
+  collectionPointId Int
+  collectionPoint   CollectionPoint  @relation(fields: [collectionPointId], references: [id])
+  donationItems     DonationItem[]
+  eta               ETA?
+  trackingId        String?          @unique // Para rastrear a doação (opcional)
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+}
+
+
+model DonationExit {
+  id        String   @id @default(uuid())
+  itemName  String
+  quantity  Int
+  recipient String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model DonationItem {
+  donationId Int
+  itemId     Int
+  quantity   Int
+  donation   Donation @relation(fields: [donationId], references: [id])
+  item       Item     @relation(fields: [itemId], references: [id])
+
+  @@id([donationId, itemId])
+}
+
+model Notification {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  title     String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ETA {
+  id               Int      @id @default(autoincrement())
+  donationId       Int      @unique
+  donation         Donation @relation(fields: [donationId], references: [id])
+  estimatedArrival DateTime
+  currentLocation  String
+  status           String?
+  transporter      String?
+  trackingNumber   String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+model Delivery {
+  id             Int      @id @default(autoincrement())
+  trackingCode   String   @unique
+  recipient      String
+  address        String
+  city           String
+  state          String
+  status         String   @default("Pendente")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
