@@ -1,8 +1,9 @@
 /* src/styles/DoarUser.module.css */
 
-.container {
+.containerDonationUser {
   padding: 20px;
   position: relative;
+  background: linear-gradient(to bottom right, #84DA15, #58910e); 
 }
 
 .content {
@@ -21,6 +22,7 @@
   width: 700px;
   height: 500px;
   margin: 0 auto;
+  background-color: #f1f2ef;
   border: 2px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
